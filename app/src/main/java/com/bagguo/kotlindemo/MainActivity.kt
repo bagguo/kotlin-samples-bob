@@ -4,20 +4,20 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bagguo.kotlindemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-//    private var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var tv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        binding = ActivityMainBinding.inflate(layoutInflater)
-//
-        setContentView(R.layout.activity_main)
 
-        tv = findViewById(R.id.tv);
-        tv.setText("======")
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.tv.setText("======")
 
         yufa()
 
